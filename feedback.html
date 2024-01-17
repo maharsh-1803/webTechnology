@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            border: 2px solid black;
+            width: 45%;
+            height: 30%;
+            margin-top: 5%;
+            padding: 25px;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+    <div class="container">
+    <form>
+        <div>
+            <label for="">Student Roll no:</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="">Student Name:</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="Faculty">Faculty name:</label>
+            <select name="Faculty" id="Faculty">
+                <option value="Shivangi ma'am">Shivangi ma'am</option>
+                <option value="mohendra roy sir">mohendra roy</option>
+                <option value="Santosh sir">Santosh sir</option>
+              </select>
+              
+        </div>
+        <div>
+            <label for="Subject">Subject name:</label>
+            <select name="Subject" id="Subject">
+                <option value="Web technology">Web technology<option>
+                <option value="Embedded system">Embeddeb system</option>
+                <option value="AI">AI</option>
+              </select>
+        </div>
+        <div>
+            <label for="rating">Rating:</label>
+            <br>
+            Excellent:<input type="radio" name="rating">
+            Good:<input type="radio" name="rating">
+            poor:<input type="radio" name="rating">
+
+        </div>
+        <div>
+            <label for="suggestion" style="display: block;">Suggestion:</label>
+            <textarea name="suggestion" id="" cols="30" rows="5"></textarea>
+        </div>
+        <div>
+            <input type="checkbox"> send response to email
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+</div>
+</body>
+</html>
