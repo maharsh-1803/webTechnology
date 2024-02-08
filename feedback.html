@@ -3,73 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+    <title>Feedback Form</title>
     <style>
-        *{
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
-        .container{
-            border: 2px solid black;
-            width: 45%;
-            height: 30%;
-            margin-top: 5%;
-            padding: 25px;
-            align-items: center;
+
+        /* Background Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            opacity: 0.5;
+            animation: gradientAnimation 10s infinite alternate;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
             text-align: center;
-            border-radius: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        label:hover {
+            color: #4caf50;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:hover,
+        select:hover {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        input[type="radio"]:hover {
+            transform: scale(1.1);
+        }
+
+        .feedback {
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* The container */
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default radio button */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .container .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
         }
     </style>
-    <div class="container">
-    <form>
-        <div>
-            <label for="">Student Roll no:</label>
-            <input type="text" placeholder="Enter roll no">
-        </div>
-        <div>
-            <label for="">Student Name:</label>
-            <input type="text" placeholder="Enter your name" >
-        </div>
-        <div>
-            <label for="Faculty">Faculty name:</label>
-            <select name="Faculty" id="Faculty">
-                <option value="Shivangi ma'am">Shivangi ma'am</option>
-                <option value="mohendra roy sir">mohendra roy</option>
-                <option value="Santosh sir">Santosh sir</option>
-              </select>
-              
-        </div>
-        <div>
-            <label for="Subject">Subject name:</label>
-            <select name="Subject" id="Subject">
-                <option value="Web technology">Web technology<option>
-                <option value="Embedded system">Embeddeb system</option>
-                <option value="AI">AI</option>
-              </select>
-        </div>
-        <div>
-            <label for="rating">Rating:</label>
-            <br>
-            Excellent:<input type="radio" name="rating">
-            Good:<input type="radio" name="rating">
-            poor:<input type="radio" name="rating">
+    <script>
+        function myFunction() {
+            document.getElementById("form").innerHTML = "<h1>Thank you</h1> for your valuable Feedback";
+        }
+    </script>
+</head>
+<body>
+    <form id="form">
+        <h2> Feedback Form</h2>
+        <div class="student_details">
+            <label for="sname">Student Name:</label>
+            <input type="text" id="sname" name="sname">
 
+            <label for="sroll">Student Roll: </label>
+            <input type="text" id="sroll" name="sroll">
         </div>
-        <div>
-            <label for="suggestion" style="display: block;">Suggestion:</label>
-            <textarea name="suggestion" id="" cols="30" rows="5" placeholder="Enter your feedback"></textarea>
+
+        <div class="teachers_details">
+            <label for="teacher_name">Teacher Name :</label>
+            <select id="teacher_name" name="teacher_name">
+                <option value="select">Choose faculty Name</option>
+                <option value="santosh">Santosh Santhpathy</option>
+                <option value="shivangi">Shivangi Mehta</option>
+                <option value="nitin">Nitin Rajput</option>
+                <option value="hardik">Hardik Vyas</option>
+                <option value="moro">Mohendra Roy</option>
+            </select>
         </div>
-        <div>
-            <input type="checkbox"> send response to email
+
+        <div class="subname">
+            <label for="subname">Subject Name :</label>
+            <select id="subname" name="subname">
+                <option value="select">choose Subject Name</option>
+                <option value="AI">AI system</option>
+                <option value="CCN">Computer Communication and Networks</option>
+                <option value="Cloud">Cloud Architecture and servises</option>
+                <option value="web">Web Technology</option>
+                <option value="Embedded">Embedded System</option>
+            </select>
         </div>
-        <div>
-            <input type="submit">
+
+        <div class="feedback">
+            <h3>Rating</h3>
+            <label class="container">1
+              <input type="radio" checked="checked" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">2
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">3
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">4
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label> 
+            <label class="container">5
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>           
+            <br><br>
+
+            <label for="sbox">Type your Suggestion Here:</label>
+            <input type="text" id="sbox" name="sbox">
+
+            <input type="checkbox" id="cbox" name="cbox"> <label for="cbox">Send a response to E-mail</label>
         </div>
+        <button type="button" onclick="myFunction()">Submit your feedback</button>
     </form>
-</div>
 </body>
 </html>
