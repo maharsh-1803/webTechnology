@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            width: 45vw;
+            height: 40vh;
+            border: 2px solid gray;
+            /* gap: 20%; */
+            justify-content: center;
+            align-items: center;
+            /* border-radius: 20px; */
+        }
+        .container1{
+            width: 45vw;
+            height: 40vh;
+            margin-top: 30px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .item1{
+            /* margin-left: 50px; */
+            font-size: large;
+        }
+        .item{
+            
+            width: 250px;
+            height: 250px;
+            background-color: #A2E4B8;
+            
+            /* margin-top: 50px; */
+        }
+        .text1{
+            font-size: 50px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        pre{
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        .item3{
+            height: 250px;
+            width: 250px;
+            margin-left: 45px;        
+            background-color: #A2E4B8;
+        }
+        .text2
+        {
+            font-size: 20px;
+        }
+        .container_main{
+            width: 45vw;
+            height: 52vh;
+            border: 2px solid gray;
+            margin-top: 40px;
+        }
+        .text4{
+            font-size: 20px;
+        }
+        .container2{
+            width: 45vw;
+            height: 40vh;
+            margin-top: 30px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">
+            <p class="text1">one</p>
+        </div>
+        <pre>The two 
+boxes should
+float to either 
+side of this 
+text.</pre>
+        <div class="item">
+            <p class="text1">Two</p>
+        </div>
+    </div>
+    <div class="container_main">
+        <div class="container1">
+        <div class="item3"><p class="text1">Float</p></div>
+        <p class="text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, odit.</p>
+        </div>
+        <div class="text4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis tenetur temporibus eum totam harum itaque
+        </div>
+    </div>
+    <div class="container_main">
+        <div class="container2">
+        <div class="item3"><p class="text1">Float</p></div>
+        </div>
+        <div class="text4" style="background-color: skyblue;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti perferendis tenetur temporibus eum totam harum itaque
+        </div>
+    </div>
+</body>
+</html>
